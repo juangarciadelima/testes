@@ -19,7 +19,11 @@ export default function alunosAprovados(lista) {
       return total
     })
     if (media >= 6) {
-      alunosAprovados.push(lista[i].nome, Math.round(media))
+      let aluno = {
+        nome: lista[i].nome,
+        nota: Math.round(media)
+      }
+      alunosAprovados.push(aluno)
     }
   }
   return alunosAprovados
