@@ -6,10 +6,10 @@
 // para um aluno ser aprovado sua nota final deve ser maior ou igual a 6
 // essa função deve retornar uma lista com todos os alunos aprovados na disciplina e sua respectiva nota final
 
-export default function alunosAprovados(lista) {
+export default function alunosAprovados(li) {
   let alunosAprovados = []
-  for (let i = 0; i < lista.length; i++) {
-    let media = lista[i].notas.reduce(function (total, item, i, array) {
+  for (let i = 0; i < li.length; i++) {
+    let media = li[i].notas.reduce(function (total, item, i, array) {
       total = total + item
 
       if (i == array.length - 1) {
