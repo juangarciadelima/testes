@@ -6,16 +6,21 @@
 // para um aluno ser aprovado sua nota final deve ser maior ou igual a 6
 // essa função deve retornar uma lista com todos os alunos aprovados na disciplina e sua respectiva nota final
 
-let notasAlunos = [
-  { nome: 'henrique', notas: [6, 6, 6] },
-  { nome: 'Bia', notas: [10, 6, 1] },
-  { nome: 'Roberto', notas: [4, 3.7, 5.5] },
-  { nome: 'Gabriel', notas: [8, 4, 9] },
-  { nome: 'Maicon', notas: [8, 5.5, 4.2] },
-  { nome: 'Geromel', notas: [6.3, 2.2, 3.8] },
-  { nome: 'Franciely', notas: [3.5, 6.3, 8.3] }
-]
+export default function alunosAprovados(lista) {
+  let alunosAprovados = []
+  for (let i = 0; i < lista.length; i++) {
+    let media = lista[i].notas.reduce(function (total, item, i, array) {
+      total = total + item
 
-function alunosAprovados(lista) {
-  //Implementar função de somatório, guardando o somatório em uma váriavel e aplicar um condicional para verificar se passa na média definida pela escola ou não
+      if (i == array.length - 1) {
+        return total / array.length
+      }
+
+      return total
+    })
+    if (media >= 6) {
+      alunosAprovados.push(lista[i].nome, Math.round(media))
+    }
+  }
+  return alunosAprovados
 }

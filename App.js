@@ -1,7 +1,8 @@
 import par_Impar from './Exercises/exercise1.js'
 import temMenorDeIdade from './Exercises/exercise2.js'
-import CheckGen from './Exercises/exercise3.js'
+import checkGen from './Exercises/exercise3.js'
 import test from './Exercises/exercise4.js'
+import alunosAprovados from './Exercises/exercise5.js'
 
 function padronizador(text, func) {
   return console.log(text, func)
@@ -74,7 +75,7 @@ let personsList = [
   { nome: 'Gabriel', genero: 'm' },
   { nome: 'Henrique', genero: 'm' }
 ]
-padronizador('Exercício 3 - ', CheckGen(personsList))
+padronizador('Exercício 3 - ', checkGen(personsList))
 // ------------------------------------------------------------------------------ //
 //Exercício 4 - JS
 
@@ -88,3 +89,14 @@ let persons = [
 padronizador('Exercício 4 -', test(persons))
 // ------------------------------------------------------------------------------ //
 //Exercício 5 - JS
+let notasAlunos = [
+  { nome: 'henrique', notas: [1, 2, 1] },
+  { nome: 'Bia', notas: [10, 6, 1] },
+  { nome: 'Roberto', notas: [4, 3.7, 5.5] },
+  { nome: 'Gabriel', notas: [8, 4, 9] },
+  { nome: 'Maicon', notas: [8, 5.5, 4.2] },
+  { nome: 'Geromel', notas: [6.3, 2.2, 3.8] },
+  { nome: 'Franciely', notas: [3.5, 6.3, 8.3] }
+]
+
+padronizador('Exercício 5 - ', alunosAprovados(notasAlunos))
